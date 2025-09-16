@@ -72,7 +72,9 @@ if st.button("Submit"):
         
         # Make a prediction with your Keras model
         prediction = model_keras.predict(embeddings)[0][0]
-        is_injection = (prediction > 0.5)
+        
+        # Use the optimal threshold you found (replace 0.98 if needed)
+        is_injection = (prediction > 0.98) 
         
         st.subheader("Model Guardrail Output")
         
